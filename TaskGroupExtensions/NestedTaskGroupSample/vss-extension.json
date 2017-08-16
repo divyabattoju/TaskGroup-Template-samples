@@ -1,0 +1,235 @@
+{
+	"manifestVersion": 1,
+	"id": "rm-tg-extensions3",
+	"version": "0.1.0",
+	"name": "Nested TaskGroup Sample",
+	"description": "Adds more tg templates to RM",
+	"publisher": "ms-devlabs",
+	"public": true,
+	"targets": [{
+		"id": "Microsoft.VisualStudio.Services"
+	}],
+	"screenshots": [{
+		"path": "images/logo.png"
+	}],
+	"content": {
+		"details": {
+			"path": "README.md"
+		}
+	},
+	"icons": {
+		"default": "images\\azureicon.png"
+	},
+	"contributions": [{
+		"id": "sample-tgtemplate",
+		"type": "ms.vss-taskgroup.tg-template",
+		"targets": ["ms.vss-taskgroup.tg-templates"],
+		"properties": {
+			"values": [{
+				"tasks": [{
+					"displayName": "Task group: Child1 ",
+					"alwaysRun": true,
+					"continueOnError": true,
+					"condition": "succeededOrFailed()",
+					"enabled": true,
+					"timeoutInMinutes": 0,
+					"inputs": {
+						
+					},
+					"task": {
+						"id": "c09aff34-c8b0-4e5f-97e5-58fd855eae4b",
+						"versionSpec": "1.*",
+						"definitionType": "metaTask"
+					}
+				},
+				{
+					"displayName": "Task group: Child2 ",
+					"alwaysRun": true,
+					"continueOnError": true,
+					"condition": "succeededOrFailed()",
+					"enabled": true,
+					"timeoutInMinutes": 0,
+					"inputs": {
+						
+					},
+					"task": {
+						"id": "d74cbf3f-c373-4ddc-8d6d-cc3bd5d17c74",
+						"versionSpec": "1.*",
+						"definitionType": "metaTask"
+					}
+				}],
+				"visibility": ["Build",
+				"Release"],
+				"runsOn": ["Agent",
+				"DeploymentGroup"],
+				"revision": 1,
+				"id": "f1a67d95-cbde-492d-b852-b186dedfae9f",
+				"name": "ParentTaskGroup",
+				"version": {
+					"major": 1,
+					"minor": 0,
+					"patch": 0,
+					"isTest": false
+				},
+				"serverOwned": false,
+				"contentsUploaded": true,
+				"iconUrl": "/tfs/_static/tfs/Dev16.M122/_content/icon-meta-task.png",
+				"hostType": null,
+				"packageType": "",
+				"packageLocation": "",
+				"sourceLocation": "",
+				"minimumAgentVersion": "*",
+				"friendlyName": "ParentTaskGroup",
+				"description": "",
+				"category": "Deploy",
+				"helpMarkDown": "",
+				"definitionType": "metaTask",
+				"demands": [],
+				"groups": [{
+					"tags": [],
+					"name": "Task group: Child1 ",
+					"displayName": "Task group: Child1 ",
+					"isExpanded": true,
+					"visibleRule": ""
+				},
+				{
+					"tags": [],
+					"name": "Task group: Child2 ",
+					"displayName": "Task group: Child2 ",
+					"isExpanded": true,
+					"visibleRule": ""
+				}],
+				"inputs": [],
+				"satisfies": [],
+				"sourceDefinitions": [],
+				"dataSourceBindings": [],
+				"instanceNameFormat": "Task group: ParentTaskGroup ",
+				"execution": {
+					
+				}
+			},
+			{
+				"tasks": [{
+					"displayName": "PowerShell Script",
+					"alwaysRun": false,
+					"continueOnError": false,
+					"enabled": true,
+					"timeoutInMinutes": 0,
+					"inputs": {
+						"scriptType": "inlineScript",
+						"scriptName": "",
+						"arguments": "",
+						"inlineScript": "# You can write your powershell scripts inline here. \n# You can also pass predefined and custom variables to this scripts using arguments\n\n Write-Host \"Hello World\"",
+						"workingFolder": "",
+						"failOnStandardError": "true"
+					},
+					"task": {
+						"id": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
+						"versionSpec": "1.*",
+						"definitionType": "task"
+					}
+				}],
+				"visibility": ["Build",
+				"Release"],
+				"runsOn": ["Agent",
+				"DeploymentGroup"],
+				"owner": "7760e605-644d-4f21-90ca-42b2682edf88",
+				"revision": 1,
+				"id": "c09aff34-c8b0-4e5f-97e5-58fd855eae4b",
+				"name": "Child1",
+				"version": {
+					"major": 1,
+					"minor": 0,
+					"patch": 0,
+					"isTest": false
+				},
+				"serverOwned": false,
+				"contentsUploaded": true,
+				"iconUrl": "/tfs/_static/tfs/Dev16.M122/_content/icon-meta-task.png",
+				"hostType": null,
+				"packageType": "",
+				"packageLocation": "",
+				"sourceLocation": "",
+				"minimumAgentVersion": "*",
+				"friendlyName": "Child1",
+				"description": "",
+				"category": "Deploy",
+				"helpMarkDown": "",
+				"definitionType": "metaTask",
+				"demands": [],
+				"groups": [],
+				"inputs": [],
+				"satisfies": [],
+				"sourceDefinitions": [],
+				"dataSourceBindings": [],
+				"instanceNameFormat": "Task group: Child1 ",
+				"execution": {
+					
+				}
+			},
+			{
+				"tasks": [{
+					"displayName": "PowerShell Script",
+					"alwaysRun": false,
+					"continueOnError": false,
+					"enabled": true,
+					"timeoutInMinutes": 0,
+					"inputs": {
+						"scriptType": "inlineScript",
+						"scriptName": "",
+						"arguments": "",
+						"inlineScript": "# You can write your powershell scripts inline here. \n# You can also pass predefined and custom variables to this scripts using arguments\n\n Write-Host \"Hello World\"",
+						"workingFolder": "",
+						"failOnStandardError": "true"
+					},
+					"task": {
+						"id": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
+						"versionSpec": "1.*",
+						"definitionType": "task"
+					}
+				}],
+				"visibility": ["Build",
+				"Release"],
+				"runsOn": ["Agent",
+				"DeploymentGroup"],
+				"owner": "7760e605-644d-4f21-90ca-42b2682edf88",
+				"revision": 1,
+				"id": "d74cbf3f-c373-4ddc-8d6d-cc3bd5d17c74",
+				"name": "Child2",
+				"version": {
+					"major": 1,
+					"minor": 0,
+					"patch": 0,
+					"isTest": false
+				},
+				"serverOwned": false,
+				"contentsUploaded": true,
+				"iconUrl": "/tfs/_static/tfs/Dev16.M122/_content/icon-meta-task.png",
+				"hostType": null,
+				"packageType": "",
+				"packageLocation": "",
+				"sourceLocation": "",
+				"minimumAgentVersion": "*",
+				"friendlyName": "Child2",
+				"description": "",
+				"category": "Deploy",
+				"helpMarkDown": "",
+				"definitionType": "metaTask",
+				"demands": [],
+				"groups": [],
+				"inputs": [],
+				"satisfies": [],
+				"sourceDefinitions": [],
+				"dataSourceBindings": [],
+				"instanceNameFormat": "Task group: Child2 ",
+				"execution": {
+					
+				}
+			}]
+		}
+	}],
+	"files": [{
+		"path": "images\\azureicon.png",
+		"addressable": true
+	}]
+}
