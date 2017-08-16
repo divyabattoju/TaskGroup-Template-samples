@@ -1,15 +1,15 @@
 # TaskGroupTemplates
 A sample extension which installs TaskGroups to release management.
 
-vss-extension.json skeleton 
+vss-extension.json skeleton format
 ```json
 {
   "manifestVersion": 1,
-  "id": "rm-tg-extensions2", 
+  "id": "uniqueId", 
   "version": "0.1.0",
-  "name": "Sample Taskgroup1", 
-  "description": "Adds more tg templates to RM", 
-  "publisher": "ms-devlabs",
+  "name": "Name of your task group", 
+  "description": "Description for your task group", 
+  "publisher": "publisher name",
   "public": true,
   "targets": [
     {
@@ -18,7 +18,7 @@ vss-extension.json skeleton
   ],
   "screenshots": [
     {
-      "path": "images/logo.png"
+      "path": "images/yourlogo.png"
     }
   ],
   "content": {
@@ -27,7 +27,7 @@ vss-extension.json skeleton
     }
   },
   "icons": {
-    "default": "images\\azureicon.png"
+    "default": "images\\yourimage.png"
   },
   "contributions": [
     {
